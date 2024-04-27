@@ -25,7 +25,7 @@ export default function SearchBar() {
           <input placeholder="Where?" />
         </div>
         <div className="searchBarSubmit">
-          <a href="#">Dive in</a>
+          <a href="https://example.com">Dive in</a>
         </div>
       </div>
     </div>
