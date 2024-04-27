@@ -85,6 +85,8 @@ main {
 }
 .search .searchBar .searchBarSubmit a {
   width: 100%;
+  color: white;
+  text-decoration: none;
 }
 .search .searchBar .searchBarSubmit:hover {
   background-color: #b2adb7;

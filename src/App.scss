@@ -89,6 +89,8 @@ main {
       cursor: pointer;
       a {
         width: 100%;
+        color: $color1;
+        text-decoration: none;
       }
     }
     .searchBarSubmit:hover {
