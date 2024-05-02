@@ -47,19 +47,28 @@ main {
         display: flex;
         justify-content: space-around;
         list-style-type: none;
-        border-bottom: solid 1px $color1;
 
         color: $color1;
-        text-align: center;
+
         li {
-          width: 90px;
+          border-bottom: solid 1px $color1;
+          text-align: center;
+          width: 200px;
           display: flex;
           flex-direction: column;
           align-items: center;
-          cursor: pointer;
+          span {
+            width: 90px;
+
+            cursor: pointer;
+          }
+          :hover {
+            color: $color2;
+          }
         }
-        :hover {
+        .selected {
           color: $color2;
+          border-bottom: solid 1px $color2;
         }
       }
     }

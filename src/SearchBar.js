@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const sortByOptions = {
   "Best Match": "best_match",
@@ -7,10 +7,26 @@ const sortByOptions = {
 };
 
 export default function SearchBar() {
+  const [sortBy, setSortBy] = useState(null);
+  const [term, setTerm] = useState("");
+  const [location, setLocation] = useState("");
+
+  function getSortByClass(sortByOption) {
+    setSortBy(sortByOption !== sortBy ? sortByOption : null);
+  }
+
   function renderSortByOptions() {
     return Object.keys(sortByOptions).map((sortByOption) => {
       let sortByOptionValue = sortByOptions[sortByOption];
-      return <li key={sortByOptionValue}>{sortByOption}</li>;
+      return (
+        <li
+          key={sortByOptionValue}
+          onClick={() => getSortByClass(sortByOption)}
+          className={sortByOption === sortBy ? "selected" : ""}
+        >
+          <span>{sortByOption}</span>
+        </li>
+      );
     });
   }
 

@@ -45,19 +45,26 @@ main {
   display: flex;
   justify-content: space-around;
   list-style-type: none;
-  border-bottom: solid 1px white;
   color: white;
-  text-align: center;
 }
 .search .searchBar .searchBarSortOptions ul li {
-  width: 90px;
+  border-bottom: solid 1px white;
+  text-align: center;
+  width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.search .searchBar .searchBarSortOptions ul li span {
+  width: 90px;
   cursor: pointer;
 }
-.search .searchBar .searchBarSortOptions ul :hover {
+.search .searchBar .searchBarSortOptions ul li :hover {
   color: #c2bcc8;
+}
+.search .searchBar .searchBarSortOptions ul .selected {
+  color: #c2bcc8;
+  border-bottom: solid 1px #c2bcc8;
 }
 .search .searchBar .searchBarFields {
   display: flex;
