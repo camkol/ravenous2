@@ -30,20 +30,43 @@ export default function SearchBar() {
     });
   }
 
+  function handleSearch(e) {
+    e.preventDefault();
+
+    if (!term || !location || !sortBy) return;
+    const newSearch = `Searching Yelp with ${term}, ${location}, ${sortByOptions[sortBy]}`;
+
+    // const newSearch = { term, location, sortBy: sortByOptions[sortBy] };
+    console.log(newSearch);
+
+    setTerm("");
+    setLocation("");
+    setSortBy(null);
+  }
+
   return (
     <div className="search">
-      <div className="searchBar">
+      <form className="searchBar" onSubmit={handleSearch}>
         <div className="searchBarSortOptions">
           <ul>{renderSortByOptions()}</ul>
         </div>
         <div className="searchBarFields">
-          <input placeholder="Search Businesses" />
-          <input placeholder="Where?" />
+          <input
+            placeholder="Search Businesses"
+            type="text"
+            value={term}
+            onChange={(e) => setTerm(e.target.value)}
+          />
+          <input
+            placeholder="Where?"
+            type="text"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
         </div>
-        <div className="searchBarSubmit">
-          <a href="https://example.com">Dive in</a>
-        </div>
-      </div>
+
+        <button className="searchBarSubmit">Dive in</button>
+      </form>
     </div>
   );
 }

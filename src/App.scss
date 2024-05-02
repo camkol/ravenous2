@@ -95,12 +95,11 @@ main {
       text-align: center;
       border-radius: 4px;
       margin: 10px auto;
+      color: $color1;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
       cursor: pointer;
-      a {
-        width: 100%;
-        color: $color1;
-        text-decoration: none;
-      }
     }
     .searchBarSubmit:hover {
       background-color: $background-color2;
