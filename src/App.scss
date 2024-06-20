@@ -30,7 +30,7 @@ main {
   font-weight: bold;
   height: 350px;
   background-image: url("eatout-desktop.jpg");
-  background-size: contain;
+  background-size: auto;
   background-repeat: no-repeat;
   width: 100%;
   display: flex;
@@ -182,6 +182,14 @@ main {
 @media screen and (max-width: 768px) {
   .search {
     height: 300px;
+    .searchBar {
+      .searchBarFields {
+        input {
+          width: 200px;
+          margin: 20px auto;
+        }
+      }
+    }
   }
 }
 @media screen and (min-width: 1440px) {
