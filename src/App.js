@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "whatwg-fetch";
 import "./App.css";
 import BusinessList from "./BusinessList";
 import SearchBar from "./SearchBar";
