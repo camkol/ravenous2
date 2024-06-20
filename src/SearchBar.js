@@ -6,10 +6,25 @@ const sortByOptions = {
   "Most Reviewed": "review_count",
 };
 
-export default function SearchBar() {
+export default function SearchBar({ onQuery }) {
   const [sortBy, setSortBy] = useState(null);
   const [term, setTerm] = useState("");
   const [location, setLocation] = useState("");
+
+  function handleSearch(e) {
+    e.preventDefault();
+
+    if (!term || !location || !sortBy) return;
+    // const newSearch = `Searching Yelp with ${term}, ${location}, ${sortByOptions[sortBy]}`;
+
+    const newSearch = { term, location, sortBy: sortByOptions[sortBy] };
+
+    onQuery(newSearch);
+
+    setTerm("");
+    setLocation("");
+    setSortBy(null);
+  }
 
   function getSortByClass(sortByOption) {
     setSortBy(sortByOption !== sortBy ? sortByOption : null);
@@ -28,20 +43,6 @@ export default function SearchBar() {
         </li>
       );
     });
-  }
-
-  function handleSearch(e) {
-    e.preventDefault();
-
-    if (!term || !location || !sortBy) return;
-    const newSearch = `Searching Yelp with ${term}, ${location}, ${sortByOptions[sortBy]}`;
-
-    // const newSearch = { term, location, sortBy: sortByOptions[sortBy] };
-    console.log(newSearch);
-
-    setTerm("");
-    setLocation("");
-    setSortBy(null);
   }
 
   return (
