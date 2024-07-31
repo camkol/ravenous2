@@ -1,5 +1,4 @@
-const apiKey =
-  "JcS5RSOmsZa3NVo40cWgxtxHg46aHyH-e4WCeSbhdQ8Rh3Ldr0IM6QFTFgzPAs-BA1FcWvT9IJeLAfRvvyX0UksDEguW2h9H-jyRuKlcZjgkXTwQE0KbOKZOKwcpZXYx";
+const apiKey = process.env.YELP_API_KEY;
 
 export const Yelp = {
   search(term, location, sortBy) {
